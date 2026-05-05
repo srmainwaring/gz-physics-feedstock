@@ -8,12 +8,6 @@ context:
   name: ${{ repo_name }}
   component_version: ${{ component_name ~ major_version }}
   cxx_name: ${{ "lib" ~ name }}
-  # osx-arm64
-  assimp_version: ">=6.0.3,<6.0.4.0a0"
-  dartsim_cpp_version: ">=6.16.7,<6.17.0a0"
-  eigen_version: ">=3.0,<5"
-  libode_version: ">=0.16.6,<0.16.7.0a0"
-  bullet_cpp_version: ">=3.25,<3.26.0a0"
 
 recipe:
   name: ${{ name }}
@@ -48,7 +42,7 @@ outputs:
       build:
         - ${{ compiler('cxx') }}
         - ${{ compiler('c') }}
-        #- ${{ stdlib('c') }}
+        - ${{ stdlib('c') }}
         - ninja
         - cmake
         - pkg-config
@@ -59,11 +53,11 @@ outputs:
         - libgz-common
         - libgz-utils
         - libsdformat
-        - eigen ${{ eigen_version }}
-        - assimp ${{ assimp_version }}
-        - dartsim-cpp ${{ dartsim_cpp_version }}
-        - libode ${{ libode_version }}
-        - bullet-cpp ${{ bullet_cpp_version }}
+        - eigen
+        - assimp
+        - dartsim-cpp
+        - libode
+        - bullet-cpp
       run_exports:
         - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
     tests:

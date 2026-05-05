@@ -14,16 +14,18 @@ c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
 - '11.0'
-channel_sources:
-- conda-forge
-channel_targets:
-- conda-forge main
+#channel_sources:
+#- conda-forge
+#channel_targets:
+#- conda-forge main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
 dartsim_cpp:
 - '6.16'
+eigen:
+- '3'
 libgz_cmake:
 - '5'
 libgz_common:
