@@ -28,6 +28,7 @@ source:
 
 build:
   number: 0
+  string: "assimp${{ assimp | version_to_buildstring }}_h${{ hash }}_${{ build_number }}"
 
 outputs:
   - package:
